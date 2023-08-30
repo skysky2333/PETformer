@@ -49,6 +49,21 @@ class LayerNorm2d(nn.Module):
     def forward(self, x):
         return LayerNormFunction.apply(x, self.weight, self.bias, self.eps)
 
+
+class ChannelAttention(nn.Module):
+
+    def __init__(self, dim):
+        super(ChannelAttention, self).__init__()
+        self.ca = nn.Sequential(
+            nn.AdaptiveAvgPool2d(1),
+            nn.Conv2d(in_channels=dim, out_channels=dim, kernel_size=1, padding=0, stride=1,
+                      groups=1, bias=True),
+        )
+
+    def forward(self, x):
+        return self.ca(x)
+
+
 class SimpleGate(nn.Module):
     def forward(self, x):
         x1, x2 = x.chunk(2, dim=1)
@@ -239,17 +254,9 @@ class PETformerBlock(nn.Module):
         self.kba = KBABlock(dim, ffn_expansion_factor, bias)
         self.mdta = MDTABlock(dim, num_heads, bias)
 
-        self.ca1 = nn.Sequential(
-            nn.AdaptiveAvgPool2d(1),
-            nn.Conv2d(in_channels=dim, out_channels=dim, kernel_size=1, padding=0, stride=1,
-                      groups=1, bias=True),
-        )
+        self.ca1 = ChannelAttention(dim)
+        self.ca2 = ChannelAttention(dim)
 
-        self.ca2 = nn.Sequential(
-            nn.AdaptiveAvgPool2d(1),
-            nn.Conv2d(in_channels=dim, out_channels=dim, kernel_size=1, padding=0, stride=1,
-                      groups=1, bias=True),
-        )
 
     def forward(self, x):
         ca1 = self.ca1(x)
@@ -261,7 +268,7 @@ class PETformerBlock(nn.Module):
 
 class PETformer(nn.Module):
     def __init__(self, inp_channels=3, out_channels=3, dim=48, num_blocks=[4, 6, 6, 8], num_refinement_blocks=4,
-                 heads=[1, 2, 4, 8], ffn_expansion_factor=1.5, bias=False):
+                 heads=[1, 2, 4, 8], ffn_expansion_factor=2, bias=False):
         super(PETformer, self).__init__()
 
         self.inp_channels = inp_channels
