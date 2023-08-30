@@ -6,7 +6,7 @@ Positron Emission Tomography (PET) is essential for non-invasive imaging of meta
 
 Key Highlights:
 - Utilizes a U-Net backbone.
-- Combines multi-headed transposed attention (MDTA) blocks and kernel-basis attention (KBA) with channel attention (CA) mechanisms.
+- Incorporate multi-headed transposed attention (MDTA) blocks, kernel-basis attention (KBA) and channel attention (CA) mechanisms.
 - Trained and validated on a dataset of 317 patients imaged on a total-body uEXPLORER PET/CT scanner.
 - Achieved significant superiority over other established denoising algorithms across different dose-reduction factors.
 
