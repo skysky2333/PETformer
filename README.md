@@ -5,8 +5,7 @@
 Positron Emission Tomography (PET) is essential for non-invasive imaging of metabolic processes in healthcare applications. However, the use of radiolabeled tracers exposes patients to ionizing radiation, raising concerns about carcinogenic potential, and warranting efforts to minimize doses without sacrificing diagnostic quality. In this work, we present a novel neural network architecture, PETformer, designed for denoising ultra-low-dose PET images without requiring structural priors such as CT or MRI. 
 
 Key Highlights:
-- Utilizes a U-Net backbone.
-- Incorporate multi-headed transposed attention (MDTA) blocks, kernel-basis attention (KBA) and channel attention (CA) mechanisms.
+- Utilizes a U-Net backbone. Incorporate multi-headed transposed attention (MDTA) blocks, kernel-basis attention (KBA) and channel attention (CA) mechanisms.
 - Trained and validated on a dataset of 317 patients imaged on a total-body uEXPLORER PET/CT scanner.
 - Achieved significant superiority over other established denoising algorithms across different dose-reduction factors.
 
