@@ -9,7 +9,7 @@ Key Highlights:
 - Trained and validated on a dataset of 317 patients imaged on a total-body uEXPLORER PET/CT scanner.
 - Achieved significant superiority over other established denoising algorithms across different dose-reduction factors.
 
-For more details, please refer to the [paper (to be published)](google.com).
+For more details, please refer to our [paper (to be published)](www.google.com).
 
 ## Architecture
 
@@ -20,7 +20,7 @@ PETformer network architecture:
 
 ![result1](./figs/result1.png)
 
-For more results, please refer to the [paper (to be published)](google.com).
+For more results, please refer to our [paper (to be published)](www.google.com).
 
 ## Pre-trained Weights
 
@@ -50,7 +50,7 @@ If you found this work useful or used it in your research, please consider citin
 
 ## Contact
 
-For questions or issues, please reach out to [yul055@ucsd.edu](mailto:yul055@ucsd.edu).
+For questions or issues, please reach out to [yusheng.li@united-imaging.com](mailto:yusheng.li@united-imaging.com).
 
 
 **Acknowledgment:** [KBNet](https://github.com/zhangyi-3/KBNet), [NAFNet](https://github.com/megvii-research/NAFNet), [Restormer](https://github.com/swz30/Restormer). 
