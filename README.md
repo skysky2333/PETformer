@@ -13,7 +13,7 @@ For more details, please refer to the [paper (to be published)](google.com).
 
 ## Architecture
 
-A overview of the network architecture:
+PETformer network architecture:
 ![architecture](./figs/architecture.png)
 
 ## Results
@@ -53,4 +53,4 @@ If you found this work useful or used it in your research, please consider citin
 For questions or issues, please reach out to [yul055@ucsd.edu](mailto:yul055@ucsd.edu).
 
 
-**Acknowledgment:** Some codes in this repository is taken from [KBNet](https://github.com/zhangyi-3/KBNet), [NAFNet](https://github.com/megvii-research/NAFNet), [Restormer](https://github.com/swz30/Restormer). 
+**Acknowledgment:** [KBNet](https://github.com/zhangyi-3/KBNet), [NAFNet](https://github.com/megvii-research/NAFNet), [Restormer](https://github.com/swz30/Restormer). 
